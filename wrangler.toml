@@ -1,0 +1,17 @@
+name = "calculator-worker"
+type = "javascript"  # or "webpack" / "javascript" depending on your build
+
+# Account ID from your Cloudflare dashboard
+account_id = "<YOUR_ACCOUNT_ID>"
+
+# Deployment environment
+workers_dev = true
+route = ""           # leave blank if just using workers_dev
+zone_id = ""         # leave blank if workers_dev only
+
+# Optional build settings if you have a frontend bundle
+[build]
+  command = "npm run build"         # if you build frontend assets here
+  upload_format = "service-worker"
+  upload_dir = "./dist"             # adjust if you place built files in /dist
+
